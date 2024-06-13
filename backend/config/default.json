@@ -1,0 +1,4 @@
+{
+    "mongoURI": "mongodb+srv://valentino:2106@serverlessinstance0.bbyhlmp.mongodb.net/",
+    "jwtSecret": "your_jwt_secret"
+  }

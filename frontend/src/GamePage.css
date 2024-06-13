@@ -1,0 +1,244 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  margin: 30px;
+  background-color: #fff;
+  border-radius: 15px;
+  height: calc(100vh - 60px);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+
+.header {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.user-info span {
+  font-size: 18px;
+  margin-bottom: 10px;
+  color: #333;
+}
+
+.user-info button {
+  padding: 10px;
+  border-radius: 5px;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  margin-bottom: 10px;
+}
+
+.user-info button:hover {
+  background-color: darkblue;
+}
+
+.difficulty-label {
+  margin-top: 10px;
+  font-size: 16px;
+}
+
+.difficulty-select {
+  padding: 10px;
+  font-size: 16px;
+  margin-top: 5px;
+}
+
+.inner-container {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  overflow: hidden;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.center {
+  background-color: white;
+  color: black;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 800px;
+  width: 100%;
+}
+
+.word-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px; /* Add some space between the rows */
+}
+
+.attempt-row {
+  display: flex;
+  gap: 5px;
+}
+
+.letter-box {
+  width: 80px; /* Taille fixe pour chaque case */
+  height: 80px; /* Taille fixe pour chaque case */
+  line-height: 80px;
+  margin: 0; /* Supprimer les marges entre les cases */
+  text-align: center;
+  font-size: 36px;
+  font-weight: bold;
+  border-radius: 5px;
+  box-sizing: border-box; /* Inclut le padding et la bordure dans les dimensions de l'élément */
+  color: white; /* Text color for the inputs */
+}
+
+.start-button {
+  padding: 20px 40px;
+  font-size: 24px;
+  border-radius: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.start-button:hover {
+  background-color: darkblue;
+}
+
+.guess-button {
+  padding: 15px 30px;
+  font-size: 18px;
+  border-radius: 10px;
+  border: none;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-top: 20px;
+}
+
+.guess-button:hover {
+  background-color: darkgreen;
+}
+
+.error-message {
+  color: red;
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+/* Animation for new attempt */
+.new-attempt {
+  animation: newAttemptAnimation 0.5s ease-in-out;
+}
+
+@keyframes newAttemptAnimation {
+  0% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* Media queries pour les écrans plus larges */
+@media (min-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .inner-container {
+    flex-direction: column;
+  }
+
+  .center {
+    flex: 1;
+    min-width: 0;
+  }
+}
+
+/* Media queries pour les petits écrans */
+@media (max-width: 767px) {
+  .container {
+    margin: 10px;
+    height: auto;
+  }
+
+  .header {
+    position: static;
+    align-items: center;
+  }
+
+  .user-info {
+    align-items: center;
+  }
+
+  .user-info span {
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .user-info button {
+    padding: 8px;
+    font-size: 12px;
+  }
+
+  .inner-container {
+    padding: 20px;
+  }
+
+  .center {
+    padding: 20px;
+  }
+
+  .letter-box {
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-size: 24px;
+  }
+
+  .start-button, .guess-button {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+
+  .word-container {
+    gap: 5px; /* Reduce the gap between rows for small screens */
+  }
+
+  .attempt-row {
+    gap: 2px; /* Reduce the gap between letters for small screens */
+  }
+
+  .difficulty-label, .difficulty-select {
+    font-size: 14px;
+  }
+}
